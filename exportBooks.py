@@ -42,7 +42,7 @@ for book in books_data_data:
 
     book_html = requests.get(export_url, headers=header, verify=cert_verify_url)
     with open(export_file_name, "w+") as file:
-        file.write(book_html.text)
+        file.write(book_html.text.encode('utf8'))
 
     print("Successfully exported book {}".format(book['name']))
 
